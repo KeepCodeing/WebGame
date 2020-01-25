@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GAME</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/main.css">
+    <script src="JS/main.js"></script>
+    <script>
+        window.onload = function () {
+            myModle.clearMask(60, 13);
+            document.getElementById("about_game").onclick = function () {
+                myModle.setModalBoxText("游戏背景", "本five为了打发时间而写的小游戏...");
+            };
+            document.getElementById("start_game").onclick = function () {
+                // 提前隐藏鼠标
+                document.getElementsByTagName("html")[0].style.cursor = 'none';
+                myModle.startGame(5);
+            };
+        };
+    </script>
+</head>
+<body>
+
+<div class="background_board">
+    <div class="mask_board" id="mask_board">
+        <h3>Loading...</h3>
+    </div>
+    <div class="main_window">
+        <div class="gameWindow" id="gameWindow">
+            <img src="" alt="" id="pointer" class="pointer">
+            <img id="gun"  alt="" src="" class="gun"/>
+        </div>
+        <div class="selection_box" id="selection_box">
+            <ul>
+                <li id="start_game">开始</li>
+                <li id="about_game" data-toggle="modal" data-target="#mySmallModal">简介</li>
+                <li>谔谔</li>
+                <li>谔谔</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--bootstrap提供的拟态框，调用标签得有 data-toggle="modal" data-target=".被调用拟态框的某个class"这两个属性-->
+<!--被调用的拟态框得有某个特殊的class属性（用来标识），或者用id来调用，将.改为#即可-->
+<div class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="mySmallModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="modalTitle"></h4>
+            </div>
+            <div class="modal-body" id="modalText"></div>
+        </div>
+    </div>
+</div>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

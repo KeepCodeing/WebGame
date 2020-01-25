@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+}
+.background_board {
+    height: 100%;
+    width: 100%;
+    background: black;
+    margin: auto;
+}
+.background_board .main_window {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-image: url("../Image/ruins.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.background_board .main_window .gameWindow {
+    display: none;
+    background-image: url("../Image/gun1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.background_board .main_window .gameWindow .bullet_hole {
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    display: block;
+    outline: none;
+}
+.background_board .main_window .gameWindow .gun {
+    position: absolute;
+    background-image: url(../Image/gun1.png);
+    width: 150px;
+    height: 175px;
+    background-repeat: no-repeat;
+    display: none;
+    bottom: 0;
+    background-position: 0 7px;
+    background-size: cover;
+    z-index: 2;
+}
+.background_board .main_window .gameWindow .pointer {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-image: url("../Image/pointer.png");
+    display: none;
+    z-index: 2;
+}
+.background_board .mask_board {
+    background: black;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    color: white;
+    font-size: 36px;
+    opacity: 1;
+    display: block;
+}
+.background_board .mask_board > h3 {
+    line-height: 530px;
+    text-align: center;
+}
+.background_board .main_window .selection_box {
+    height: 100%;
+    width: 100%;
+}
+.background_board .main_window .selection_box > ul {
+    list-style: none;
+    font-size: 36px;
+    position: absolute;
+    bottom: 30px;
+    left: 60px;
+}
+.background_board .main_window .selection_box > ul > li {
+    cursor: pointer;
+    margin: 10px 0;
+    color: blue;
+}
+/*:hover选择器和元素间不能有间隔*/
+.background_board .main_window .selection_box > ul > li:hover {
+    color: white;
+}
