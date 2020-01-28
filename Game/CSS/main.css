@@ -16,7 +16,7 @@ html, body {
     height: 100%;
     width: 100%;
     margin: auto;
-    background-image: url("../Image/ruins.png");
+    background-image: url("../Image/nhourse.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -30,6 +30,10 @@ html, body {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+}
+.background_board .main_window .gameWindow .roles {
+    position: fixed;
+    z-index: 2;
 }
 .background_board .main_window .gameWindow .bullet_hole {
     height: 30px;

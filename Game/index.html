@@ -14,13 +14,17 @@
     <script>
         window.onload = function () {
             myModle.clearMask(60, 13);
+
             document.getElementById("about_game").onclick = function () {
                 myModle.setModalBoxText("游戏背景", "本five为了打发时间而写的小游戏...");
             };
             document.getElementById("start_game").onclick = function () {
                 // 提前隐藏鼠标
                 document.getElementsByTagName("html")[0].style.cursor = 'none';
-                myModle.startGame(5);
+                // 角色死亡动画时间太长会出现无法消除页面元素的情况
+                // 暂定可配置项：maxBulletHole:弹坑数，speed:移动速度，anTime:死亡动画持续时间，
+                // maxEnemyCnt:最多存活人物，spawnTime:生成人物间隔
+                myModle.startGame(5, 200, 300, 6, 1500);
             };
         };
     </script>
@@ -28,6 +32,7 @@
 <body>
 
 <div class="background_board">
+<!--    <img src="Image/14979.jpg" alt="" style="height: 300px;width: 300px;" id="test" ttttt="1">-->
     <div class="mask_board" id="mask_board">
         <h3>Loading...</h3>
     </div>
@@ -40,7 +45,7 @@
             <ul>
                 <li id="start_game">开始</li>
                 <li id="about_game" data-toggle="modal" data-target="#mySmallModal">简介</li>
-                <li>谔谔</li>
+                <li>设置</li>
                 <li>谔谔</li>
             </ul>
         </div>
